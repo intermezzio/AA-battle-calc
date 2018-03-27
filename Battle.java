@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 
 public class Battle {
-	public ArrayList<Unit> attack;
-	public ArrayList<Unit> defend;
+	public Team attack;
+	public Team defend;
+	// public Fraction solution; <- dictionary
+
+	public Battle(Team att, Team def) {
+
+	}
 }
