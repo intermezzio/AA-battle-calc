@@ -15,5 +15,8 @@ public class Fraction extends Number implements Comparable<Fraction> throws Ille
 			return ZERO;
 		}
 	}
+
+	public int compareTo(Fraction f) {
+		//return int comparable
 	}
 }
