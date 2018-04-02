@@ -16,6 +16,10 @@ public class Fraction extends Number implements Comparable<Fraction> throws Ille
 		}
 	}
 
+	public double doubleValue() {
+		return (double)numerator / denominator;
+	}
+
 	public int compareTo(Fraction f) {
 		//return int comparable
 	}
