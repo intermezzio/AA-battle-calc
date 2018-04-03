@@ -20,6 +20,12 @@ public class Fraction extends Number implements Comparable<Fraction> throws Ille
 		return (double)numerator / denominator;
 	}
 
+	public Fraction add(Fraction f) {
+		num = f.numerator * denominator + numerator * f.denominator;
+		den = denominator * f.denominator;
+		return new Fraction(num, den);
+	}
+
 	public int compareTo(Fraction f) {
 		//return int comparable
 	}
