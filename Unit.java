@@ -1,7 +1,9 @@
 public class Unit {
-	byte attackValue;
-	byte defendValue;
-	byte hitsLeft;
+	private byte attackValue;
+	private byte defendValue;
+	private byte hits;
+	private byte hitsLeft;
+	private byte status = 2; // 2 = full, 1 = damaged, 0 = dead
 
 	public BattleUnit() {
 		this((byte)attackValue, (byte)defendValue);
@@ -16,5 +18,15 @@ public class Unit {
 		this.attackValue = attackValue;
 		this.defendValue = defendValue;
 		this.hitsLeft = hitsLeft;
+	}
+
+	public byte takeHit() {
+		if(this.hitsLeft == 0) {
+			return (byte)-1;
+		} else {
+			hitsLeft--;
+			status = hitsLeft > 0 ? 1 : 0;
+			return hitsLeft;
+		}
 	}
 }
