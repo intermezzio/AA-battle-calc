@@ -1,18 +1,21 @@
 import java.math.BigInteger;
-public class Fraction extends Number implements Comparable<Fraction> throws IllegalArgumentException {
+import java.util.ArrayList;
+
+public class Fraction {
 	private long numerator;
 	private long denominator;
 	public Fraction ZERO = new Fraction(0,1);
 	public Fraction ONE = new Fraction(1,1);
 
-	public Fraction(int num, int den) {
-		numerator = long(num);
-		denominator = long(den);
+	public Fraction(long num, long den) {
+		long numerator = (long)num;
+		long denominator = (long)den;
 
 		if(denominator == (long)0) {
 			throw new IllegalArgumentException("Cannot divide by zero.");
 		} else if (numerator == (long)0) {
-			return ZERO;
+			numerator = 0;
+			denominator = 1;
 		}
 	}
 
@@ -21,8 +24,10 @@ public class Fraction extends Number implements Comparable<Fraction> throws Ille
 	}
 
 	public Fraction add(Fraction f) {
-		num = f.numerator * denominator + numerator * f.denominator;
-		den = denominator * f.denominator;
+		long num = (long)f.numerator * denominator + (long)numerator * f.denominator;
+		long den = (long) denominator * f.denominator;
+		return new Fraction(num, den);
+	}
 		return new Fraction(num, den);
 	}
 
