@@ -28,7 +28,23 @@ public class Fraction {
 		long den = (long) denominator * f.denominator;
 		return new Fraction(num, den);
 	}
+
+	public Fraction multiply(Fraction f) {
+		long num = (long)f.numerator * numerator;
+		long den = (long)f.numerator * denominator;
 		return new Fraction(num, den);
+	}
+
+	public Fraction subtract(Fraction f) {
+		return add(f.negate());
+	}
+
+	public Fraction anti() {
+		return new Fraction(denominator - numerator, denominator);
+	}
+
+	public Fraction negate() {
+		return new Fraction(-1 * numerator, denominator);
 	}
 
 	public int compareTo(Fraction f) {
