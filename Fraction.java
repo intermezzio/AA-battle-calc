@@ -49,5 +49,18 @@ public class Fraction {
 
 	public int compareTo(Fraction f) {
 		//return int comparable
+	  return 0;
+	}
+	/** Fraction Probability
+	  * 		
+	 */
+	public static void appendFraction(ArrayList<Fraction> chances, Fraction f) {
+		Fraction x = f.anti();
+		chances.add(f.multiply(chances.get(chances.size() - 1)));
+		for(int i = chances.size() - 1; i >= 1; i--) {
+			chances.set(i, x.multiply(chances.get(i-1)).add(f.multiply(chances.get(i))));
+		}
+		chances.set(0, f.multiply(chances.get(0)));
+		return;
 	}
 }
