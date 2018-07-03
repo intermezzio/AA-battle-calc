@@ -8,5 +8,6 @@ public class Battle {
 	public Battle(Team att, Team def) {
 		this.att = att;
 		this.def = def;
+
 	}
 }
